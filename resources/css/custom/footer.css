@@ -1,0 +1,48 @@
+/* 📂 File: resources/css/footer.css */
+/* 🎯 Purpose: Grid layout for footer with full manual control */
+
+.footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 24px !important;
+    margin-bottom: 3rem;
+}
+
+
+.footer-column h3 {
+    font-size: 1.25rem;
+    color: #9ca3af;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+.footer-column ul,
+.footer-column div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-column a {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer-column a:hover {
+    color: #f97316;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #1f2937;
+    padding-top: 2rem;
+    font-size: 0.875rem;
+    color: #9ca3af;
+    gap: 1rem;
+}

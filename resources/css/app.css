@@ -1,0 +1,9 @@
+/* ✅ Your Reusable Custom CSS */
+@import './custom/reusable-styles.css';
+@import './custom/footer.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
