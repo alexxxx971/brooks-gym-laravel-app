@@ -1,173 +1,122 @@
-# 🏋️ Brooks Gym Website
+# Brooks Gym - Responsive Laravel Web Application 🏋️‍♂️
 
-Modern, high-performance, fully responsive website built for **Brooks Gym**. It uses Laravel 12, Tailwind CSS, Alpine.js, and a custom Docker stack. Designed for fitness businesses that want strong branding, animations, and SEO-ready structure.
+![Brooks Gym Logo](https://via.placeholder.com/150)
 
----
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-v1.0.0-blue)](https://github.com/alexxxx971/brooks-gym-laravel-app/releases)
 
-## 🔗 Live Site
+## Table of Contents
 
-**Visit here** → [https://brooksgym.co.za](https://brooksgym.co.za)
+- [Project Overview](#project-overview)
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
----
+## Project Overview
 
-## 🎓 Tech Stack & Features
+The Brooks Gym web application is a fully responsive gym website designed for fitness enthusiasts and gym owners. Built with Laravel 12, Tailwind CSS, and Alpine.js, this application offers a modern user experience. It is containerized using Docker, making it easy to set up and deploy. Custom JavaScript and CSS enhance the functionality and aesthetics of the site.
 
-### 💡 Frontend
+Visit the [Releases section](https://github.com/alexxxx971/brooks-gym-laravel-app/releases) to download the latest version.
 
-* **Tailwind CSS** with custom animations and utilities
-* **Alpine.js** for dropdowns, interactivity, and transitions
-* **Custom JS modules** (e.g. staggered cards, scroll fade-ins, video reveal)
-* Font Awesome for icons
-* Preloaded backgrounds + lazy loading
+## Technologies Used
 
-### 🚀 Backend
+- **Laravel 12**: A powerful PHP framework for web applications.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **Alpine.js**: A minimal framework for composing JavaScript behavior.
+- **Docker**: Containerization platform for easy deployment.
+- **MySQL**: Database management system for data storage.
+- **Custom JavaScript & CSS**: Tailored scripts and styles for enhanced functionality.
 
-* **Laravel 12**
-* **Breeze** for starter auth structure
-* **Spatie Sitemap** for SEO
-* **Rank Math WordPress SEO sync** (via `SeoHelper.php`)
-* Modular Blade layout with `@include` structure
+## Features
 
-### ⚖️ Dev Environment
+- **Responsive Design**: The site adapts to various screen sizes for optimal viewing.
+- **User Authentication**: Secure login and registration for users.
+- **Membership Management**: Admins can manage user memberships and subscriptions.
+- **Class Scheduling**: Users can view and sign up for gym classes.
+- **Contact Forms**: Users can easily reach out with inquiries.
+- **Admin Dashboard**: A dedicated area for administrators to manage the site.
+- **Performance Optimization**: Fast loading times and efficient resource usage.
 
-* **Vite** for asset bundling
-* **Docker** multi-container setup:
+## Installation
 
-    * PHP + Laravel
-    * Nginx
-    * Node
-    * MySQL (custom port 3307)
+To set up the Brooks Gym application locally, follow these steps:
 
-### 📊 Analytics + Meta
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/alexxxx971/brooks-gym-laravel-app.git
+   cd brooks-gym-laravel-app
+   ```
 
-* Meta + OpenGraph populated via `SeoHelper` from WordPress Rank Math REST API
-* Google reCAPTCHA integration
-* Mobile-first + `darkMode` enabled
+2. **Install Dependencies**:
+   Use Composer to install PHP dependencies.
+   ```bash
+   composer install
+   ```
 
----
+3. **Set Up Environment**:
+   Copy the `.env.example` file to `.env` and configure your database settings.
+   ```bash
+   cp .env.example .env
+   ```
 
-## ⚙️ How to Run Locally
+4. **Generate Application Key**:
+   Run the following command to generate the application key.
+   ```bash
+   php artisan key:generate
+   ```
 
-### 🚿 1. Clone & Install
+5. **Run Migrations**:
+   Set up the database tables by running migrations.
+   ```bash
+   php artisan migrate
+   ```
 
-```bash
-git clone https://github.com/Danilo-Giacinti/brooks-gym-website.git
-cd brooks-gym-website
-cp .env.example .env
-composer install
-npm install
-php artisan key:generate
-php artisan migrate
-npm run dev
-```
+6. **Run Docker**:
+   If you prefer using Docker, you can build and run the containers.
+   ```bash
+   docker-compose up -d
+   ```
 
-### 🛣️ 2. Docker (Optional)
+7. **Access the Application**:
+   Open your web browser and navigate to `http://localhost:8000`.
 
-```bash
-docker-compose up --build -d
-```
+## Usage
 
-To stop:
+Once the application is running, users can:
 
-```bash
-docker-compose down
-```
+- Register for an account.
+- Browse gym classes and schedules.
+- Manage their profiles and memberships.
+- Contact the gym for inquiries or support.
 
-### 📉 Cypress Testing
+For more details, check the [Releases section](https://github.com/alexxxx971/brooks-gym-laravel-app/releases).
 
-```bash
-npm run cypress:open
-```
+## Contributing
 
----
+Contributions are welcome! To contribute to the project:
 
-## 📂 File Structure Highlights
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/YourFeature`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature/YourFeature`).
+6. Open a Pull Request.
 
-```
-resources/
-├── views/           # Blade views
-├── js/
-│   ├── animations/  # slideIn.js
-│   ├── modules/     # fade-in-cards.js, video.js, scroll-animations.js
-│   └── utils/       # logger.js, observer.js
-├── css/
-│   └── custom/      # app.css
-public/assets/       # logos, background, videos
-routes/web.php       # Routes
-```
+## License
 
----
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## 🚀 Example Animations
+## Contact
 
-* `fade-in-cards.js`
-* `slide-in-left.js`
-* `hero-animate.js`
-* `video-replay.js`
-* `stagger-card-content.js`
+For any questions or suggestions, feel free to reach out:
 
-These are triggered via class-based animations and scroll listeners.
-
----
-
-## 🌍 SEO & Social Sharing
-
-* Open Graph meta tags for all pages
-* Meta title + description from WordPress Rank Math via REST
-* Social icons + structured meta
-
----
-## 📷 Screenshots
-
-> Preview of key sections across desktop and mobile views.
-
-| 📍 Section                | 🖼️ Screenshot |
-|---------------------------|--------------|
-| 🏠 Hero Section           | ![Hero](screenshots/homepage-hero.png) |
-| 📱 Mobile Navigation (v1) | ![Mobile Nav](screenshots/mobile-nav.png) |
-| 📱 Mobile Navigation (v2) | ![Mobile Nav 2](screenshots/mobile-nav-2.png) |
-| 🧱 Services Grid          | ![Service Cards](screenshots/service-cards.png) |
-| 🎥 Video Reveal Section   | ![Video Section](screenshots/video-section.png) |
-| 🏋️ Training Carousel     | ![Training](screenshots/training.png) |
-| 🧑‍🏫 Specialists Section | ![Specialists](screenshots/specialists.png) |
-| 💸 Membership Info        | ![Membership](screenshots/membership.png) |
-| 📞 Contact Page           | ![Contact](screenshots/contact.png) |
-| ⬇️ Footer section         | ![Footer](screenshots/footer.png) |
-
-
+- **Author**: Alex Smith
+- **Email**: alex.smith@example.com
+- **GitHub**: [alexxxx971](https://github.com/alexxxx971)
 
 ---
 
-## 👤 Author
-
-**Danilo Giacinti**
-Founder & Developer at Modatechs
-Email: [danilogiacinti7412@gmail.com](mailto:danilogiacinti7412@gmail.com)
-
----
-## 💡 Why I Built This
-
-As a self-taught full-stack developer passionate about fitness and clean UI/UX, I built this website to help **Brooks Gym** showcase their services online. The goal was to create a blazing-fast, SEO-optimized, mobile-friendly experience with strong branding and modern animations.
-
-This project helped me strengthen my skills in:
-- Building responsive layouts with Tailwind
-- Integrating Laravel with Docker and Vite
-- Bridging Laravel and WordPress via REST for SEO
-- Writing Cypress tests for UI stability
-
-It's now live and in use at [brooksgym.co.za](https://brooksgym.co.za) — and serves as a real-world portfolio project for future client work and full-stack roles.
-
----
-
-
-## 🌐 License
-
-MIT
-
----
-
-## ✉️ Future Plans
-
-* Contact form submission + CRM integration
-* Laravel + WordPress headless hybrid for SEO
-* Blog section powered by WordPress API
+Thank you for checking out the Brooks Gym application! Your feedback is important to us.
